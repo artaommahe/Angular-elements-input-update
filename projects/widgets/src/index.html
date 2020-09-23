@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Widgets</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <button class="inc">inc</button>
+
+  <some-widget input-counter="0"></some-widget>
+
+  <script>
+    let counter = 1;
+    const someWidget = document.querySelector('some-widget');
+
+    document.querySelector('.inc').addEventListener('click', () => updateSomeWidgetInput());
+
+    updateSomeWidgetInput();
+
+    function updateSomeWidgetInput() {
+      someWidget.setAttribute('input-counter', counter);
+
+      counter += 1;
+    }
+  </script>
+</body>
+</html>
